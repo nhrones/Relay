@@ -2,7 +2,7 @@
 import { serve } from "./deps.ts"
 
 const RELAYPORT = parseInt(Deno.env.get('PORT') as string) || 9099
-const DEBUG = true//(Deno.env.get('DEBUG') === 'true') ? true: false;
+const DEBUG = (Deno.env.get('DEBUG') === 'true') ? true : false;
 
 // look for any 'help' request
 if (Deno.args[0] === '-h' || Deno.args[0] === '?') {
@@ -28,10 +28,10 @@ console.log('Service started on port:', RELAYPORT)
 
 // Handle all http requests
 async function handleRequest(request: Request): Promise<Response> {
-
+   
    // get our path-name and any search parameters
    const { pathname, searchParams } = new URL(request.url);
-   
+   console.log(pathname)
    // a request to subscribe to a relay-stream (SSE)
    if (pathname.includes("subscribe")) {
       
@@ -119,4 +119,4 @@ function registerClient(_req: Request, chan: string): Response {
 /** 
  * the Relay client module 
  */
-export {publish, subscribe} from './client.ts'
+//export {publish, subscribe} from './client.ts'

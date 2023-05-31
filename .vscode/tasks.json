@@ -2,12 +2,21 @@
    "version": "2.0.0",
    "tasks": [
       {
-         "label": "Deno Run Service",
+         "label": " Run Local Relay Service",
          "type": "shell",
-         "command": "relay",
+         "command": "deno",
+         "args": [
+            "run", 
+            "-A", 
+            "--unstable",
+            "./mod.ts"
+         ],
+         "options": {          
+            "env": {"DEBUG": "true"}
+         },
          "problemMatcher": [
             "$deno"
          ]
-      }
+      },
    ]
 }

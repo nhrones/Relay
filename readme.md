@@ -3,6 +3,8 @@
  
 Relay is a simple peer-to-peer communication microservice.    
 
+To test this service, see https://github.com/nhrones/RelayClient
+
 On Deno Deploy, Relay can create a world-wide real-time event bus.   
 Relay can distribute any json-payload, including; app-events, database-updates, or analytics-events.  
 
